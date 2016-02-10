@@ -13,5 +13,7 @@ wait_for_mysql
 
 echo "0 0 * * * /backup.sh $mysql_conn_opts" | crontab -
 
+crond -d 8 -b
+
 :>/log/backup.log
 tail -f /log/backup.log
